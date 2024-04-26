@@ -200,33 +200,63 @@ a {
   letter-spacing: 3%;
   text-align: center;
 }
-.activity__photos {
-  display: flex;
-  gap: 30px;
+.gallery-card:nth-child(1){
+  background-image: url(./images/box1.svg);
+}
+.gallery-card:nth-child(2){
+  background-image: url(./images/box2.svg);
+}
+.gallery-card:nth-child(3){
+  background-image: url(./images/box3.svg);
 }
 
-.box1{
-  background: rgba(47, 48, 58, 0.8);
-  width: 370px;
-  height: 70px;
+.gallery-card {
+  transform: translateX(40%);
+  background-size: cover;
+  background-position: center;
+  width: 30vh;
+  height: 30vh;
+  z-index: 7;
+  margin: 2vh;
+  float: left;
+  font-family: Montserrat;
+  font-size: 3vh;
+  color:rgba(0, 0, 0, 0);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  position: absolute;
-  left: 5;
-  top: 5;
+  justify-content: end;
+  box-shadow: 2px 2px 15px 3px rgba(0, 0, 0, 0.5);
 }
-.box1-span{
-  color: #FFF;
-  text-align: center;
-  font-family: Roboto;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0.42px;
-  text-transform: uppercase;
-}
+.gallery-card::before {
+
+  bottom: 0;
+  width: 100%;
+  height: calc(40px + 3vh);
+  background-color: rgba(0, 0, 0, 1);
+  backdrop-filter: blur(0);
+  transition: 100ms linear;
+  }
+  .gallery-card>span {
+  z-index: 8;
+  margin-bottom: 20px;
+  color: #fff;
+  opacity: 0;
+  filter: blur(10px);
+  transition: 100ms linear;
+  }
+  .gallery-card:hover {
+  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 1);
+  }
+  .gallery-card:hover::before {
+  background-color: rgba(0, 0, 0);
+  backdrop-filter: blur (10px);
+  }
+  .gallery-card:hover >span {
+  opacity: 1;
+  filter: blur(0);
+  }
+
 .team-members {
   background: rgb(245, 244, 250);
   padding: 94px 0;
